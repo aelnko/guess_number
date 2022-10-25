@@ -1,0 +1,20 @@
+{
+  "name": "guess_number",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelnko/guess_number.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aelnko/guess_number/issues"
+  },
+  "homepage": "https://github.com/aelnko/guess_number#readme"
+}
