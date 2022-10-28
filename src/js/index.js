@@ -1,27 +1,35 @@
 const form = document.querySelector('form');
-const messageText = document.querySelector('.main__message');
+const input = document.querySelector('input');
 
-const value = Math.floor(Math.random * 100);
+let value = Math.floor(Math.random() * 100);
 
-const messages = {
-  win: 'You got it! Great!',
-  tooLow: 'Try high.',
-  tooHigh: 'Try low.',
-  lose: 'Sorry. You lose the game :('
+let i = 0;
+
+const checkHandler = (value, answer, i) => {
+  if (i === 9 && Number(answer) !== value) {
+    i = 0;
+    return 'Game over :( Try again?';
+  }
+  if (Number(answer) === value) {
+    return 'Great! You are right!!!';
+  }
+  if (Number(answer) > value) {
+    return 'Try lower...';
+  }
+  if (Number(answer) < value) {
+    return 'Try higher...';
+  }
 };
 
-form.addEventListener('submit', (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
-  const answer = Number(e.target.value);
-  let i = 0;
-  while (i <= 10) {
-    if (answer === value) {
-      messageText.textContent = messages[win];
-    } else if (answer < value) {
-      messageText.textContent = messages[tooLow]
-    } else if (answer > value) {
-      messageText.textContent = messages[tooHigh];
-    }
-  }
-  messageText.textContent = messages[lose];
-})
+  console.log(value);
+  const messageText = document.querySelector('.main__message');
+  const answer = input.value;
+  messageText.innerHTML = checkHandler(value, answer, i);
+  i += 1;
+  e.target.reset();
+};
+
+form.addEventListener('submit', handleSubmit);
+

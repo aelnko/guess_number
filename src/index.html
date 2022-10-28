@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.min.css">
     <title>Document</title>
   </head>
   <body>
@@ -14,11 +15,14 @@
         it in 10 turns or fewer. We'll tell you if your guess was too high or
         too low. You have 10 attempts.
       </p>
-      <form action="" method="post" class="main_game game">
+      <form class="main_game game">
         <input class="game__input" type="text" placeholder="print your number" />
         <button class="game__submit" type="submit">Submit guess</button>
       </form>
       <p class="main__message"></p>
+      <!-- <p class="main_message--higher message">Try high.</p>
+      <p class="main-message--lower message">Try low.</p>
+      <p class="main__message--lose message">Game over :(</p> -->
     </div>
   </body>
   <script src="./js/index.js"></script>
