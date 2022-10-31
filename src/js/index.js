@@ -5,9 +5,12 @@ let value = Math.floor(Math.random() * 100);
 
 let i = 0;
 
+let gameOver = false;
+
 const checkHandler = (value, answer, i) => {
   if (i === 9 && Number(answer) !== value) {
     i = 0;
+    gameOver = true;
     return 'Game over :( Try again?';
   }
   if (Number(answer) === value) {
